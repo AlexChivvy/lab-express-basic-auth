@@ -1,2 +1,25 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+{{!-- ALEX ADDED THIS --}}
+<form action="/signup" method="POST" id="form">
+  <h2>Sign-Up</h2>
+
+{{!-- These input names (name="username") are linked to the index.js router.post 
+req.post requisition --}}
+  <label for="username">Username</label>
+  <input type="text" name="username">
+
+  <label for="password">Password</label>
+  <input type="password" name="password">
+
+  {{#if errorMessage }}
+    <div class="error-message">{{ errorMessage }}</div>
+  {{/if}}
+
+  <button>Sign in</button>
+
+  <p class="account-message">
+    Don't have an account? <a href="/signup">Sign up</a>
+  </p>
+</form>
